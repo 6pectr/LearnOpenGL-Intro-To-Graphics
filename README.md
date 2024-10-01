@@ -1,3 +1,3 @@
-LearnOpenGL
+**LearnOpenGL**
 
 In progress...
