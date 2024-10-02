@@ -124,13 +124,20 @@ int main() {
 
 		float timevalue = glfwGetTime();
 		float redvalue = (sin(timevalue) / 2.0f) + 0.5f; 
+		float greenvalue = (sin(timevalue) / 2.0f) + 0.5f;
+		float bluevalue = (sin(timevalue) / 2.0f) + 0.5f;
 
-		int vertexColorLocation = glGetUniformLocation(shaderProgram, "aColor");
+		glBindBuffer(GL_ARRAY_BUFFER, VBOs[1]);
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * 1, &redvalue);
+		glBufferSubData(GL_ARRAY_BUFFER, 20, sizeof(float) * 1, &greenvalue);
+		glBufferSubData(GL_ARRAY_BUFFER, 40, sizeof(float) * 1, &bluevalue);
+
+		//int vertexColorLocation = glGetUniformLocation(shaderProgram, "aColor");
 
 		glUseProgram(shaderProgram);
 
 
-		glUniform4f(vertexColorLocation, redvalue, 0.0f, 0.0f, 1.0f); 
+		//glUniform4f(vertexColorLocation, redvalue, 0.0f, 0.0f, 1.0f); 
 
 		int m = glGetUniformLocation(shaderProgram, "transform");
 
