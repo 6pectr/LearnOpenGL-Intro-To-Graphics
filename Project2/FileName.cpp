@@ -124,13 +124,47 @@ int main() {
 
 		float timevalue = glfwGetTime();
 		float redvalue = (sin(timevalue) / 2.0f) + 0.5f; 
-		float greenvalue = (sin(timevalue) / 2.0f) + 0.5f;
-		float bluevalue = (sin(timevalue) / 2.0f) + 0.5f;
+		float greenvalue = (sin(timevalue) / 1.5f) + 0.5f;
+		float bluevalue = (sin(timevalue) / 1.0f) + 0.5f;
 
 		glBindBuffer(GL_ARRAY_BUFFER, VBOs[1]);
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * 1, &redvalue);
 		glBufferSubData(GL_ARRAY_BUFFER, 20, sizeof(float) * 1, &greenvalue);
 		glBufferSubData(GL_ARRAY_BUFFER, 40, sizeof(float) * 1, &bluevalue);
+		/* 
+		float positions[] = {
+			0.5f, -0.5f, 0.0f, // 0  , 4  , 8  (x)
+		   -0.5f, -0.5f, 0.0f, // 12 , 16 , 20 (y)
+			0.0f,  0.5f, 0.0f  // 24 , 28 , 32 (z)
+		};
+		*/
+		float angle = sin(timevalue) * (2 * 3.14);;
+
+		float RotationmatrixY[] = {
+			cos(angle), 0.0f, sin(angle),
+			0.0f, 1.0f, 0.0f,
+			-sin(angle), 0.0f, cos(angle)
+		};
+		float RotationmatrixZ[] = {
+			cos(angle), -sin(angle), 0.0f,
+			sin(angle), cos(angle), 0.0f,
+			0.0f, 0.0f, 1.0f
+		};
+		float RotationmatrixX[] = {
+			1.0f, 0.0f, 0.0f,
+			0.0f, cos(angle), -sin(angle),
+			0.0f, sin(angle), cos(angle)
+		};
+
+		// MAKE PYRAMID ROTATION xD
+
+		glBindBuffer(GL_ARRAY_BUFFER, VBOs[0]);
+
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(float) * 3, &RotationmatrixY);
+		glBufferSubData(GL_ARRAY_BUFFER, 8, sizeof(float) * 3, &RotationmatrixX);
+		glBufferSubData(GL_ARRAY_BUFFER, 20, sizeof(float) * 3, &RotationmatrixZ);
+
+
 
 
 		//int vertexColorLocation = glGetUniformLocation(shaderProgram, "aColor");
