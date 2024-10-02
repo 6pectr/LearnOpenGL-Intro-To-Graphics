@@ -132,6 +132,7 @@ int main() {
 		glBufferSubData(GL_ARRAY_BUFFER, 20, sizeof(float) * 1, &greenvalue);
 		glBufferSubData(GL_ARRAY_BUFFER, 40, sizeof(float) * 1, &bluevalue);
 
+
 		//int vertexColorLocation = glGetUniformLocation(shaderProgram, "aColor");
 
 		glUseProgram(shaderProgram);
