@@ -2,6 +2,7 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
+/* 
 using namespace std;
 
 const char* vertexShaderSource = "#version 330 core\n"
@@ -138,6 +139,7 @@ int main() {
 			0.0f,  0.5f, 0.0f  // 24 , 28 , 32 (z)
 		};
 		*/
+		/*
 		float angle = sin(timevalue) * (2 * 3.14);;
 
 		float RotationmatrixY[] = {
@@ -201,3 +203,4 @@ int main() {
 	glfwTerminate();
 	return 0;
 }
+*/
