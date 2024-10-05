@@ -105,7 +105,7 @@ int main()
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
-
+    // DO 10-20 PAGES TODAY lazy fuck//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
