@@ -3,7 +3,7 @@
 #include "shader.h"
 #include <iostream>
 #include <cmath>
-
+/*
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window)
 {
@@ -97,7 +97,15 @@ int main()
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        float offset = 0.5f;
+        class Offset {
+        public:
+			float offset;
+        };
+
+        Offset OffsetData;
+
+        OffsetData.offset = 0.5f;
+
        // ourShader.setFloat("u_offset", offset);
 
         // render the triangle
@@ -133,3 +141,4 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 }
+*/

@@ -24,6 +24,9 @@
     <ClCompile Include="FileName2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="walking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="vertex_shader.glsl" />

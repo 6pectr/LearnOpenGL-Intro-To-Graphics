@@ -140,6 +140,7 @@
     <ClCompile Include="..\..\..\..\Downloads\glad (1)\src\glad.c" />
     <ClCompile Include="FileName.cpp" />
     <ClCompile Include="FileName2.cpp" />
+    <ClCompile Include="walking.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.fs" />
