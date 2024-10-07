@@ -8,7 +8,7 @@
 #include <glm/gtc/matrix_transform.hpp> // For matrix transformations
 #include <glm/gtc/type_ptr.hpp> // For converting to pointer types
 
-
+/*
 class Player {
 public:
     float x_position = 0.0f;
@@ -150,17 +150,15 @@ int main() {
         ourShader.setFloat("u_offset_z", player.z_position);
         ourShader.setFloat("u_scale", scale_factor); // Set scale factor based on z_position
 
+        std::vector<glm::vec3> playerVertices = {
+            { player.x_position + (player_size * scale_factor), player.y_position + (player_size * scale_factor), player.z_position + player_size },
+            { player.x_position - (player_size * scale_factor), player.y_position - (player_size * scale_factor), player.z_position - player_size },
+            { player.x_position, player.y_position, player.z_position }
+        };
+
         //render
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-
-
-        std::vector<glm::vec3> playerVertices = {
-            { (player.x_position + player_size) * scale_factor, (player.y_position - player_size) * scale_factor, player.z_position },
-            { (player.x_position - player_size) * scale_factor, (player.y_position - player_size) * scale_factor, player.z_position },
-            { player.x_position * scale_factor, (player.y_position + player_size) * scale_factor, player.z_position }
-        };
-
 
         glBindBuffer(GL_ARRAY_BUFFER, VBO);
         glBufferData(GL_ARRAY_BUFFER, playerVertices.size() * sizeof(glm::vec3), playerVertices.data(), GL_DYNAMIC_DRAW);
@@ -178,3 +176,4 @@ int main() {
     glfwTerminate();
     return 0;
 }
+*/

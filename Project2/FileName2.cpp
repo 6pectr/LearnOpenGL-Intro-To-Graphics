@@ -3,7 +3,7 @@
 #include "shader.h"
 #include <iostream>
 #include <cmath>
-/*
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window)
 {
@@ -106,14 +106,14 @@ int main()
 
         OffsetData.offset = 0.5f;
 
-       // ourShader.setFloat("u_offset", offset);
+        //ourShader.setFloat("u_offset", OffsetData.offset);
 
         // render the triangle
         ourShader.use();
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
-    // DO 10-20 PAGES TODAY lazy fuck//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -141,4 +141,3 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 }
-*/
