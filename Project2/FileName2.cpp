@@ -106,14 +106,14 @@ int main()
 
         OffsetData.offset = 0.5f;
 
-        //ourShader.setFloat("u_offset", OffsetData.offset);
+        //ourShader.setFloat("u_offset", OffsetData.offset); 
 
         // render the triangle
         ourShader.use();
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
-
+        // 
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
