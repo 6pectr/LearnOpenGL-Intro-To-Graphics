@@ -112,7 +112,7 @@ int main()
         ourShader.use();
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
-
+        //
         // 
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
