@@ -111,9 +111,11 @@ int main()
         // render the triangle
         ourShader.use();
         glBindVertexArray(VAO);
+        //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
         glDrawArrays(GL_TRIANGLES, 0, 3);
         //
-        // //
+        // // // 
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -141,3 +143,4 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 }
+

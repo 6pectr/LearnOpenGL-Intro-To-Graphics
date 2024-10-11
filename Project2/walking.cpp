@@ -25,7 +25,6 @@ float bottom_bound = -1.0f;
 float top_bound = 1.0f;
 
 
-
 void processKeyInput(Player* player, float speed) {
     // Check boundaries dynamically based on updated values
     if (keyStates[GLFW_KEY_W] && player->y_position < top_bound) {
