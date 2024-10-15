@@ -114,9 +114,8 @@ int main()
         //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
         glDrawArrays(GL_TRIANGLES, 0, 3);
-        //
-        // //
-        // //
+
+
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
