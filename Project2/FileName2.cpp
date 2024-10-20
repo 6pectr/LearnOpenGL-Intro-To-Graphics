@@ -72,7 +72,7 @@ int main()
     0, 1, 3,   // First triangle
     1, 2, 3    // Second triangle
     };
-
+    //
     unsigned int VBO, VAO;
     unsigned int EBO;
     glGenVertexArrays(1, &VAO);
