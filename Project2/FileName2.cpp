@@ -55,24 +55,18 @@ int main()
 
     float vertices[] = {
         // positions // colors // texture coords
-        0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, // top right
-        0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, // bottom right
+        0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 2.0f, 2.0f, // top right
+        0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 2.0f, 0.0f, // bottom right
         -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, // bottom left
-        -0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f // top left
+        -0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 2.0f // top left
     };
 
-
-    float texCoords[] = {
-        0.0f, 0.0f, // lower-left corner
-        1.0f, 0.0f, // lower-right corner
-        0.5f, 1.0f // top-center corner
-    };
 
     unsigned int indices[] = {
     0, 1, 3,   // First triangle
     1, 2, 3    // Second triangle
     };
-    //
+    
     unsigned int VBO, VAO;
     unsigned int EBO;
     glGenVertexArrays(1, &VAO);
@@ -184,13 +178,6 @@ int main()
         Offset OffsetData;
 
         OffsetData.offset = 0.0f;
-        //
-
-
-        ////////////////////////////////// PAGE 66 ////////////////////!!!
-
-
-        //
 
         ourShader.setFloat("u_offset", OffsetData.offset); 
 
@@ -204,8 +191,6 @@ int main()
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
 
-        // render container
-        ourShader.use();
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
