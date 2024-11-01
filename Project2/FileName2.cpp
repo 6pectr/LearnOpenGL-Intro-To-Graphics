@@ -7,15 +7,18 @@
 #include "stb_image.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow* window)
-{
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-};
+
+void processInput(GLFWwindow* window);
 
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+
+
+
+//mix opacity fragement shader
+float aVertices = 0.2f;
+
 
 
 int main()
@@ -52,8 +55,6 @@ int main()
     }
 
     Shader ourShader("shader.vs", "shader.fs");
-
-    float aVertices = 0.2f;
 
     float vertices[] = {
         // positions // colors // texture coords
@@ -180,13 +181,6 @@ int main()
 
         OffsetData.offset = 0.0f;
 
-        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-            aVertices += 0.0001f;
-        }
-        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-            aVertices -= 0.0001f;
-        }
-
         ourShader.setFloat("u_offset", OffsetData.offset); 
 
         ourShader.setFloat("mix_opacity", aVertices);
@@ -232,4 +226,18 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 }
+
+void processInput(GLFWwindow* window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+        aVertices += 0.0001f;
+    }
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
+        aVertices -= 0.0001f;
+    }
+};
+
 
