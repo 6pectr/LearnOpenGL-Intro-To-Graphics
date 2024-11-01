@@ -53,6 +53,8 @@ int main()
 
     Shader ourShader("shader.vs", "shader.fs");
 
+    float aVertices = 0.2f;
+
     float vertices[] = {
         // positions // colors // texture coords
         0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 2.0f, 2.0f, // top right
@@ -60,7 +62,6 @@ int main()
         -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, // bottom left
         -0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 2.0f // top left
     };
-
 
     unsigned int indices[] = {
     0, 1, 3,   // First triangle
@@ -179,7 +180,16 @@ int main()
 
         OffsetData.offset = 0.0f;
 
+        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+            aVertices += 0.0001f;
+        }
+        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
+            aVertices -= 0.0001f;
+        }
+
         ourShader.setFloat("u_offset", OffsetData.offset); 
+
+        ourShader.setFloat("mix_opacity", aVertices);
 
         ourShader.use(); // don’t forget to activate the shader first!
 
